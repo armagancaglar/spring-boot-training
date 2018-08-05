@@ -43,8 +43,8 @@ public class PersonnelController {
     
 	//Create personnel
 	@RequestMapping(path="/create/{personnelName}/{departmentId}",method=RequestMethod.POST)
-	public ResponseEntity<?> createPersonnel(@PathVariable("personnelName") String personnelName,@PathVariable("departmentId") long departmentId) throws UnsupportedEncodingException {
-		personnelName = URLDecoder.decode(personnelName, "UTF-8");
+	public ResponseEntity<?> createPersonnel(@PathVariable("personnelName") String personnelName,@PathVariable("departmentId") long departmentId){
+//		personnelName = URLDecoder.decode(personnelName, "UTF-8");
 
 		Department dept = new Department();
 		dept = departmentService.findById(departmentId);
